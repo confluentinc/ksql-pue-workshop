@@ -944,7 +944,10 @@ ksql>
 In the resulting `TABLE` there are some characteristics to note:
 
 * The `ROWTIME` is the timestamp of the most recent message to arrive in that aggregate.
-* The `ROWKEY` is a composite key of the window start timestamp as an epoch, plus the column(s) defined in the `GROUP BY`. It's not currently possible to access the window start/end time programatically from KSQL, but https://github.com/confluentinc/ksql/issues/1674[this is planned].
+* The `ROWKEY` is a composite key of the window start timestamp as an epoch, plus the column(s) defined in the `GROUP BY`.
+
+// TODO: Add WindowStart and WindowEnd example
+
 
 Using the `ROWKEY` column it's possible to examine the aggregate values:
 
@@ -1008,6 +1011,23 @@ kibana                             /usr/local/bin/kibana-docker     Up      0.0.
 ----
 
 Create a dynamic mapping in Elasticsearch so that the timestamp of source data is correctly detected:
+
+//TODO: Add that is should create them using the docker-compose exec command.
+
+// docker-compose command
+
+[source,bash]
+----
+docker-compose exec kafka-connect-cp bash -c '/scripts/create-elastic-source.sh'
+----
+//end
+
+// SSL into a container
+
+[source,bash]
+----
+docker exec -it <container name> /bin/bash
+----
 
 [source,bash]
 ----

@@ -12,9 +12,6 @@ services:
     depends_on:
       - zookeeper
     ports:
-    # Exposes 9092 for external connections to the broker
-    # Use kafka:29092 for connections internal on the docker network
-    # See https://rmoff.net/2018/08/02/kafka-listeners-explained/ for details
       - 9092:9092
     environment:
       KAFKA_BROKER_ID: 1
@@ -69,6 +66,8 @@ services:
       CONNECT_OFFSET_STORAGE_REPLICATION_FACTOR: "1"
       CONNECT_STATUS_STORAGE_REPLICATION_FACTOR: "1"
       CONNECT_PLUGIN_PATH: '/usr/share/java'
+    volumes:
+     - $PWD/scripts:/scripts
 
   ksql-server:
     image: confluentinc/cp-ksql-server:5.1.1
@@ -80,7 +79,7 @@ services:
       KSQL_BOOTSTRAP_SERVERS: kafka:29092
       KSQL_LISTENERS: http://0.0.0.0:8088
       KSQL_KSQL_SCHEMA_REGISTRY_URL: http://schema-registry:8081
-      KSQL_KSQL_SERVICE_ID: confluent_rmoff_01
+      KSQL_KSQL_SERVICE_ID: confluent_ksql_streams_01
 
   # Runs the Kafka KSQL data generator for ratings
   datagen-ratings:
