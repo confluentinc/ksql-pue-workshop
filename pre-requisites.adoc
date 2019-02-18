@@ -1,5 +1,5 @@
 = Pre-requisites for KSQL Workshop
-Robin Moffatt <robin@confluent.io>
+Pere Urbon <pere@confluent.io>, Robin Moffatt <robin@confluent.io>
 v1.00, September 4, 2018
 
 [NOTE]

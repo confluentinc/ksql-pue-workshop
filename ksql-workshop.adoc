@@ -1,8 +1,8 @@
 = Workshop: Real-time SQL Stream Processing at Scale with Apache Kafka and KSQL
 :doctype: book
 :sectnums:
-Robin Moffatt <@rmoff>
-v1.31, September 10, 2018
+Pere Urbon <@purbon>, Robin Moffatt <@rmoff>
+v1.32, March 26, 2019.
 
 :toc:
 
