@@ -10,14 +10,12 @@ This KSQL ratings demo showcases Kafka stream processing using KSQL. This demo w
 
 ----
 
-As with the other demos in this repo, you may run the entire demo end-to-end with `./start.sh`, and it runs on your local Confluent Platform install instead of Docker.
-
 ![image](images/ksql_workshop_01.png)
 
 
 # Prerequisites
 
-* [Common demo prerequisites](https://github.com/confluentinc/examples#prerequisites)
+* [Common demo prerequisites](https://github.com/confluentinc/ksql-pue-workshop#prerequisites)
 * [Confluent Platform 5.0](https://www.confluent.io/download/)
 * If you are running the [step-by-step guide](ksql-workshop.adoc)
   * Docker
@@ -26,7 +24,7 @@ As with the other demos in this repo, you may run the entire demo end-to-end wit
 
 # What Should I see?
 
-After you run `./start.sh`:
+After you start the confluent platform (see the [step-by-step guide](ksql-workshop.adoc) for details).
 
 * If you are running Confluent Platform, open your browser and navigate to the Control Center web interface Monitoring -> Data streams tab at http://localhost:9021/monitoring/streams to see throughput and latency performance of the KSQL queries
 * If you are running Confluent Platform, use Control Center to view and create KSQL queries. Otherwise, run the KSQL CLI `ksql http://localhost:8088`.
